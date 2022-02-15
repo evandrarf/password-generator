@@ -41,7 +41,9 @@ function generatePasswordOptions(length, uppercase, numbers, symbols) {
   const NUMBERS = "0123456789";
   const SYMBOLS = "!@#$%^&*()";
 
-  const passwordType = LOWERCASE + (uppercase ? UPPERCASE : null) + (numbers ? NUMBERS : null) + (symbols ? SYMBOLS : null);
+  const passwordType = LOWERCASE + (uppercase ? UPPERCASE : "") + (numbers ? NUMBERS : "") + (symbols ? SYMBOLS : "");
+
+  console.log(passwordType);
 
   for (let i = 0; i < length; i++) {
     password += passwordType.charAt(Math.floor(Math.random() * passwordType.length));
